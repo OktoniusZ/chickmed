@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Article;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -33,7 +34,9 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [ArticleController::class, "index"])->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::post('/dashboard', [ArticleController::class, "store"])->middleware(['auth', 'verified'])->name('add.dashboard');
+Route::post('/dashboard', [ArticleController::class, "store"])->middleware(['auth', 'verified'])->name('add.dashboard');    
+
+Route::get('/delete/{id}', [ArticleController::class, "delete"])->middleware(['auth', 'verified'])->name('delete');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

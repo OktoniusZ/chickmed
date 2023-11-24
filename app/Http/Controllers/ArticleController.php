@@ -45,4 +45,10 @@ class ArticleController extends Controller
         $article->image = $validatedData['image'];
         $article->save();
     }
+
+    public function delete(Request $request, $id){
+        $data = Article::find($id);
+        $data -> delete();
+        return redirect() -> route('dashboard')->with('success', 'Data Berhasil Dihapus');
+    }
 }
