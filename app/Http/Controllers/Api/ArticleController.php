@@ -40,6 +40,7 @@ class ArticleController extends Controller
             'image'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'title'     => 'required',
             'content'   => 'required',
+            'author'    => 'required',
         ]);
 
         //check if validation fails
@@ -56,6 +57,7 @@ class ArticleController extends Controller
             'image'     => $image->hashName(),
             'title'     => $request->title,
             'content'   => $request->content,
+            'author'    => $request->author,
         ]);
 
         //return response

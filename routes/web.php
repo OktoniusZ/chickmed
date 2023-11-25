@@ -34,9 +34,16 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [ArticleController::class, "index"])->middleware(['auth', 'verified'])->name('dashboard');
 
+// add data route
 Route::post('/dashboard', [ArticleController::class, "store"])->middleware(['auth', 'verified'])->name('add.dashboard');    
 
+// delete data route
 Route::get('/delete/{id}', [ArticleController::class, "delete"])->middleware(['auth', 'verified'])->name('delete');
+
+Route::get('/article/edit', [ArticleController::class, "edit"])->middleware(['auth', 'verified'])->name('edit.dashboard');
+
+Route::post('/article/update/{id}', [ArticleController::class, "update"])->middleware(['auth', 'verified'])->name('update.dashboard');    
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('image');
             $table->string('title');
-            // $table->string('author');
+            $table->string('author');
             // references
             $table->text('content');
             $table->timestamps();

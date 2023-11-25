@@ -19,12 +19,13 @@ class Article extends Model
         'image',
         'title',
         'content',
+        'author',
     ];
 
     protected function image(): Attribute
     {
         return Attribute::make(
-            get: fn ($image) => asset('/storage/articles/' . $image),
+            get: fn ($image) => asset('/public/articles/' . $image),
         );
     }
 }

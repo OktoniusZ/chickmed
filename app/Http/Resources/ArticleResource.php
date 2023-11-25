@@ -34,7 +34,7 @@ class ArticleResource extends JsonResource
          return [
              'success'   => $this->status,
              'message'   => $this->message,
-             'data'      => $this->resource
+             'data'      => $this->resource,
          ];
      }
 }
