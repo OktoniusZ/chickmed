@@ -23,11 +23,9 @@ class ReportModelSeeder extends Seeder
             $reportData = [
                 'date' => $faker->date,
                 'result_image' => $faker->imageUrl(),
-                'koordinat' => $faker->sentence,
                 'raw_image' => $faker->sentence,
                 'created_at' => now(),
                 'updated_at' => now(),
-                'disease_id' => $faker->randomElement($diseaseModelIds),
             ];
 
             DB::table('report_models')->insert($reportData);

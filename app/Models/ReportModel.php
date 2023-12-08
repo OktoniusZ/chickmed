@@ -4,13 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class ReportModel extends Model
 {
     use HasFactory;
 
-    public function disease()
+    public function reportDisease(): HasMany
     {
-        return $this->belongsTo(DiseaseModel::class, 'disease_id');
+        return $this->hasMany(ReportDiseaseModel::class);
     }
 }

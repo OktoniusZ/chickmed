@@ -20,7 +20,7 @@ class DiseaseModelSeeder extends Seeder
             DB::table('disease_models')->insert([
                 'name' => $faker->word,
                 'description' => $faker->sentence,
-                'solution' => $faker->paragraph,
+                'solution' => $faker->sentence,
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);

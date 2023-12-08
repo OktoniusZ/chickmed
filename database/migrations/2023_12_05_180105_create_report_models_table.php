@@ -13,13 +13,11 @@ return new class extends Migration
     {
         Schema::create('report_models', function (Blueprint $table) {
             $table->id();
-            $table->string('date');
-            $table->string('raw_image');
-            $table->string('koordinat');
-            $table->string('result_image');
+            $table->foreignId("user_id")->nullable()->constrained("users");
+            $table->string("date");
+            $table->string("raw_image");
+            $table->string("result_image");
             $table->timestamps();
-            $table->unsignedBigInteger('disease_id')->nullable();
-            $table->foreign('disease_id')->references('id')->on('disease_models');
         });
     }
 
