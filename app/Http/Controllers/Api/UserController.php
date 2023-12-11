@@ -9,11 +9,11 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function updateUser(Request $request) {
-        // $validated = $request->validate([
-        //     'profile' => 'required',
-        //     'name' => 'required',
-        //     'email' => 'required',
-        // ]);
+        $validated = $request->validate([
+            'profile' => 'required',
+            'name' => 'required',
+            'email' => 'required',
+        ]);
 
         $image = $request->file('profile');
         $image->storeAs('public/user-profile', $image->hashName());
