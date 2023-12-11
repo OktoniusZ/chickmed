@@ -28,12 +28,13 @@ Route::middleware('auth:sanctum')->get('/user', [App\Http\Controllers\Api\AuthCo
 //posts
 Route::apiResource('/articles', App\Http\Controllers\Api\ArticleController::class);
 
+Route::post("reports/store", [ReportController::class, "store"]);
 
 // Information Model API
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/update/user', [UserController::class, "updateUser"]);
     Route::get("reports", [ReportController::class, "reports"]);
-    Route::get("reports//detail/{id}", [ReportController::class, "detailReport"]);
+    Route::get("reports/detail/{id}", [ReportController::class, "detailReport"]);
     Route::get("reports/latest", [ReportController::class, "latestReport"]);
     // user
     Route::get('/model', [InformationModelController::class, "index"]);

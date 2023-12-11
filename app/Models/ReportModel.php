@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class ReportModel extends Model
 {
+    protected $guarded = [];
+
     use HasFactory;
 
     public function reportDisease(): HasMany

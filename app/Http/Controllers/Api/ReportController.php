@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\ReportModel;
+use App\Models\ReportDiseaseModel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -51,5 +52,30 @@ class ReportController extends Controller
             'data' => $report
         ], 200);
 
+    }
+
+    public function store(Request $request) {
+        $report = ReportModel::create([
+            'user_id' => $request->user_id,
+            // file
+            "date" => $request->date,
+            "raw_image" => $request->raw_image,
+            "result_image" => $request->processed_image,
+        ]);
+
+        foreach ($request->data as $value) {
+            ReportDiseaseModel::create([
+                'report_model_id' => $report["id"],
+                'disease_model_id' => $value["class"],
+                'confidence' => $value["confidence"],
+                'bounding_box' => implode(',', $value["boxes"]),
+            ]);
+        }
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Analisys Result.',
+            'data' => $report
+        ], 201);
     }
 }
