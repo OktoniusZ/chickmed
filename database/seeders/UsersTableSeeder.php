@@ -29,6 +29,7 @@ Run the database seeds.*/
                 'password' => bcrypt('12345678'),
                 'created_at' => now(),
                 'updated_at' => now(),
+                'profile' => '',
             ];
 
             DB::table('users')->insert($userData);
