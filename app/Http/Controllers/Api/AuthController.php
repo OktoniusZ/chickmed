@@ -73,6 +73,7 @@ class AuthController extends Controller
     public function getUser(Request $request)
     {
         $user = $request->user();
+        $user->token = "";
         if ($user) {
             return response()->json([
                 'success' => true,

@@ -20,7 +20,7 @@ class ReportController extends Controller
     }
 
     public function reports(Request $request) {
-        $reports = ReportModel::where('user_id', $request->user()->id)->latest()->paginate(6);
+        $reports = ReportModel::where('user_id', $request->user()->id)->with("reportDisease.diseases")->latest()->paginate(6);
 
         return response()->json([
             'success' => true,
@@ -31,9 +31,9 @@ class ReportController extends Controller
 
     public function detailReport(Request $request) {
         if ($request->id) {
-            $report = ReportModel::where('id', $request->id)->first();
+            $report = ReportModel::where('id', $request->id)->with("reportDisease.diseases")->first();
         } else {
-            $report = ReportModel::latest()->first();
+            $report = ReportModel::with("reportDisease.diseases")->latest()->first();
         }
 
         return response()->json([
@@ -44,7 +44,7 @@ class ReportController extends Controller
     }
 
     public function latestReport(Request $request) {
-        $report = ReportModel::where('user_id', $request->user()->id)->latest()->first();
+        $report = ReportModel::where('user_id', $request->user()->id)->with("reportDisease.diseases")->latest()->first();
 
         return response()->json([
             'success' => true,
@@ -77,5 +77,23 @@ class ReportController extends Controller
             'message' => 'Analisys Result.',
             'data' => $report
         ], 201);
+    }
+
+    public function summary(Request $request){
+        $reports = ReportModel::where('user_id', $request->user()->id)->with("reportDisease.diseases")->latest()->get();
+        $detectionInAMonth = $reports->count();
+        $sickChick = $reports->where('reportDisease.disease_model_id', "!=", 3)->count();
+        $healthyChick = $reports->where('reportDisease.disease_model_id', 3)->count();
+        $diseases = [
+            "total" => $detectionInAMonth,
+            "sickChick" => $sickChick,
+            "healthyChick" => $healthyChick,
+        ];
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Summary Analisys Result.',
+            'data' => $diseases
+        ], 200);
     }
 }

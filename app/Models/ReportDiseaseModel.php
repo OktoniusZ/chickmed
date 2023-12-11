@@ -17,7 +17,7 @@ class ReportDiseaseModel extends Model
         return $this->belongsTo(ReportDiseaseModel::class);
     }
 
-    public function diseases() : HasMany {
-        return $this->HasMany (DiseaseModel::class);
+    public function diseases() : BelongsTo {
+        return $this->belongsTo (DiseaseModel::class, "disease_model_id", "id");
     }
 }

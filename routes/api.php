@@ -33,9 +33,11 @@ Route::post("reports/store", [ReportController::class, "store"]);
 // Information Model API
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/update/user', [UserController::class, "updateUser"]);
+    Route::post('/change/password', [UserController::class, "changePassword"]);
     Route::get("reports", [ReportController::class, "reports"]);
     Route::get("reports/detail/{id}", [ReportController::class, "detailReport"]);
     Route::get("reports/latest", [ReportController::class, "latestReport"]);
+    Route::get("summary", [ReportController::class, "summary"]);
     // user
     Route::get('/model', [InformationModelController::class, "index"]);
 });

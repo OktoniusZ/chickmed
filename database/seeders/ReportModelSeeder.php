@@ -29,6 +29,16 @@ class ReportModelSeeder extends Seeder
             ];
 
             DB::table('report_models')->insert($reportData);
+
+            DB::table('report_disease_models')->insert([
+                'report_model_id' => $index,
+                'disease_model_id' => $faker->randomElement($diseaseModelIds),
+                "confidence" => 0.905,
+                "bounding_box" => "76,71,609,979",
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+
         }
     }
 }

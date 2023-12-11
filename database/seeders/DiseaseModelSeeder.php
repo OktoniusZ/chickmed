@@ -16,11 +16,43 @@ class DiseaseModelSeeder extends Seeder
     {
         $faker = Faker::create();
 
+        DB::table('disease_models')->insert([
+            'name' => "Salmonella disease",
+            'description' => $faker->sentence,
+            'solution' => $faker->sentence,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('disease_models')->insert([
+            'name' => "Coccidiosis disease",
+            'description' => $faker->sentence,
+            'solution' => $faker->sentence,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('disease_models')->insert([
+            'name' => "Healthy",
+            'description' => $faker->sentence,
+            'solution' => $faker->sentence,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('disease_models')->insert([
+            'name' => "Newcastle disease",
+            'description' => $faker->sentence,
+            'solution' => $faker->sentence,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
         foreach (range(1, 10) as $index) {
-            DB::table('disease_models')->insert([
-                'name' => $faker->word,
-                'description' => $faker->sentence,
-                'solution' => $faker->sentence,
+
+            DB::table('articles')->insert([
+                'image' => $faker->imageUrl($width = 640, $height = 480),
+                'title' => $faker->word,
+                'author' => "hengki",
+                'date' => "2021-01-01",
+                'content' => $faker->sentence,
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);
