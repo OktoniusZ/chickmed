@@ -23,6 +23,7 @@ Run the database seeds.*/
                 'password' => $faker->password,
                 'created_at' => now(),
                 'updated_at' => now(),
+                'profile' => '',
             ];
 
             DB::table('users')->insert($userData);

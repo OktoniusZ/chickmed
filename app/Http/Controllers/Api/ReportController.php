@@ -3,13 +3,15 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\ReportModel;
-use App\Models\ReportDiseaseModel;
 use Illuminate\Http\Request;
+use App\Models\ReportDiseaseModel;
+use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 
 class ReportController extends Controller
 {
-    public function listReport() {
+    public function listReport()
+    {
         $reports = ReportModel::latest()->paginate(6);
 
         return response()->json([
@@ -19,7 +21,8 @@ class ReportController extends Controller
         ], 200);
     }
 
-    public function reports(Request $request) {
+    public function reports(Request $request)
+    {
         $reports = ReportModel::where('user_id', $request->user()->id)->latest()->paginate(6);
 
         return response()->json([
@@ -29,7 +32,8 @@ class ReportController extends Controller
         ], 200);
     }
 
-    public function detailReport(Request $request) {
+    public function detailReport(Request $request)
+    {
         if ($request->id) {
             $report = ReportModel::where('id', $request->id)->first();
         } else {
@@ -43,7 +47,8 @@ class ReportController extends Controller
         ], 200);
     }
 
-    public function latestReport(Request $request) {
+    public function latestReport(Request $request)
+    {
         $report = ReportModel::where('user_id', $request->user()->id)->latest()->first();
 
         return response()->json([
@@ -51,10 +56,11 @@ class ReportController extends Controller
             'message' => 'Latest Analisys Result.',
             'data' => $report
         ], 200);
-
     }
 
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
+        $request = $request->all()[0];
         $report = ReportModel::create([
             'user_id' => $request->user_id,
             // file
