@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId("report_model_id")->constrained("report_models");
             $table->foreignId("disease_model_id")->constrained("disease_models");
             $table->string("confidence");
+            $table->string("bounding_box");
             $table->timestamps();
         });
     }
@@ -25,6 +26,5 @@ return new class extends Migration
      */
     public function down(): void
     {
-        
     }
 };
