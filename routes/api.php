@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\InformationModelController;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,9 +22,7 @@ Route::post('register', [App\Http\Controllers\Api\AuthController::class, 'regist
 Route::post('login', [App\Http\Controllers\Api\AuthController::class, 'login']);
 
 // get user data
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::middleware('auth:sanctum')->get('/user', [App\Http\Controllers\Api\AuthController::class, 'getUser']);
 
 //posts
 Route::apiResource('/articles', App\Http\Controllers\Api\ArticleController::class);
@@ -31,6 +30,7 @@ Route::apiResource('/articles', App\Http\Controllers\Api\ArticleController::clas
 
 // Information Model API
 Route::middleware('auth:sanctum')->group(function () {
+    Route::post('/update/user', [UserController::class, "updateUser"]);
     // user
     Route::get('/model', [InformationModelController::class, "index"]);
 });

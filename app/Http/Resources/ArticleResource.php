@@ -15,14 +15,14 @@ class ArticleResource extends JsonResource
      *
      * @return array<string, mixed>
      */
-    
+
      public function __construct($status, $message, $resource)
      {
          parent::__construct($resource);
          $this->status  = $status;
          $this->message = $message;
      }
- 
+
      /**
       * Transform the resource into an array.
       *

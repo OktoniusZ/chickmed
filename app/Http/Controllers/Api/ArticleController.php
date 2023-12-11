@@ -24,13 +24,13 @@ class ArticleController extends Controller
      *
      * @return void
      */
-    public function index()
+    public function index(Request $request)
     {
         //get all articles
-        $articles = Article::latest()->paginate(6);
-
+        $page = $request->page ?? 1;
+        $articles = Article::latest()->paginate(6, ['*'], 'page', $page);
         //return collection of articles as a resource
-        return new ArticleResource(true, 'List Data Articles', $articles);
+        return new ArticleResource(true, 'List Data Articles', $articles->items());
     }
 
     public function store(Request $request)
