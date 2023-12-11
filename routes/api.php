@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\InformationModelController;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\ReportController;
 use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -31,6 +32,9 @@ Route::apiResource('/articles', App\Http\Controllers\Api\ArticleController::clas
 // Information Model API
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/update/user', [UserController::class, "updateUser"]);
+    Route::get("reports", [ReportController::class, "reports"]);
+    Route::get("reports//detail/{id}", [ReportController::class, "detailReport"]);
+    Route::get("reports/latest", [ReportController::class, "latestReport"]);
     // user
     Route::get('/model', [InformationModelController::class, "index"]);
 });
