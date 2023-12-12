@@ -10,24 +10,36 @@ class UserController extends Controller
 {
     public function updateUser(Request $request) {
         $validated = $request->validate([
-            'profile' => 'required',
             'name' => 'required',
             'email' => 'required',
         ]);
 
-        $image = $request->file('profile');
-        $image->storeAs('public/user-profile', $image->hashName());
+        $user = $request->user();
+        $profile = $user->profile;
 
-        User::where('id', $request->id)->update([
-            'profile' => $image->hashName(),
-            'name' => $request->name,
-            'email' => $request->email,
+        if ($request->hasFile('profile')) {
+            $image = $request->file('profile');
+            $image->storeAs('public/user-profile', $image->hashName());
+
+            $profile = $image->hashName();
+        }
+
+        User::where('id', $user->id)->update([
+            'profile' => $profile,
+            'name' => str_replace('"',"", $request->name),
+            'email' => str_replace('"',"",$request->email),
         ]);
+        $user = $request->user();
+        if ($request->hasFile('profile')) {
+            $user->profile = asset('/public/user-profile/' . $image->hashName());
+        } else {
+            $user->profile = asset('/public/user-profile/' . $user->profile);
+        }
 
         return response()->json([
             'success' => true,
             'message' => 'Update Success.',
-            'data' => $validated
+            'data' => $user
         ], 201);
     }
 

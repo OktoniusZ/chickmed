@@ -58,16 +58,19 @@ class ReportController extends Controller
 
     public function store(Request $request)
     {
-        $request = $request->all()[0];
+
+        $data = collect(json_decode($request[0]));
         $report = ReportModel::create([
-            'user_id' => $request->user_id,
+            'user_id' => $data["user_id"],
             // file
-            "date" => $request->date,
-            "raw_image" => $request->raw_image,
-            "result_image" => $request->processed_image,
+            "date" => $data["date"],
+            "raw_image" => $data["raw_image"],
+            "result_image" => $data["processed_image"],
         ]);
 
-        foreach ($request->data as $value) {
+        // Log::info($data["data"]);
+        foreach ($data["data"] as $value) {
+            $value = collect($value);
             ReportDiseaseModel::create([
                 'report_model_id' => $report["id"],
                 'disease_model_id' => $value["class"],
@@ -76,11 +79,12 @@ class ReportController extends Controller
             ]);
         }
 
+        Log::info("fadfsafskjdkfas faslfkajsflkas dfasdf");
         return response()->json([
             'success' => true,
             'message' => 'Analisys Result.',
             'data' => $report
-        ], 201);
+        ], 200);
     }
 
     public function summary(Request $request){

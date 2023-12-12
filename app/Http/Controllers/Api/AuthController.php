@@ -55,6 +55,7 @@ class AuthController extends Controller
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             $auth = Auth::user();
             $auth->token = $auth->createToken('auth_token')->plainTextToken;
+            $auth->profile = asset('/public/user-profile/' . $auth->profile);
 
             return response()->json([
                 'success' => true,
@@ -73,6 +74,7 @@ class AuthController extends Controller
     public function getUser(Request $request)
     {
         $user = $request->user();
+        $user->profile = asset('/public/user-profile/' . $user->profile);
         $user->token = "";
         if ($user) {
             return response()->json([
