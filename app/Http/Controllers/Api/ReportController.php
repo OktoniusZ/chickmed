@@ -79,11 +79,10 @@ class ReportController extends Controller
             ]);
         }
 
-        Log::info("fadfsafskjdkfas faslfkajsflkas dfasdf");
         return response()->json([
             'success' => true,
             'message' => 'Analisys Result.',
-            'data' => $report
+            'data' => 200
         ], 200);
     }
 
