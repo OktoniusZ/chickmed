@@ -12,7 +12,7 @@ class ReportController extends Controller
 {
     public function listReport()
     {
-        $reports = ReportModel::latest()->paginate(6);
+        $reports = ReportModel::latest()->paginate(20);
 
         return response()->json([
             'success' => true,
@@ -22,7 +22,7 @@ class ReportController extends Controller
     }
 
     public function reports(Request $request) {
-        $reports = ReportModel::where('user_id', $request->user()->id)->with("reportDisease.diseases")->latest()->paginate(6);
+        $reports = ReportModel::where('user_id', $request->user()->id)->with("reportDisease.diseases")->latest()->paginate(20);
 
         return response()->json([
             'success' => true,
@@ -68,12 +68,14 @@ class ReportController extends Controller
             "result_image" => $data["processed_image"],
         ]);
 
-        // Log::info($data["data"]);
-        foreach ($data["data"] as $value) {
+        Log::info(collect($data["data"]));
+        foreach (collect($data["data"]) as $value) {
+//            Log::info($diseases);
             $value = collect($value);
+$diseases = $value["class"] + 1;
             ReportDiseaseModel::create([
                 'report_model_id' => $report["id"],
-                'disease_model_id' => $value["class"],
+                'disease_model_id' => $diseases,
                 'confidence' => $value["confidence"],
                 'bounding_box' => implode(',', $value["boxes"]),
             ]);

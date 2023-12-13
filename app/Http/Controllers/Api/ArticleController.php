@@ -28,7 +28,7 @@ class ArticleController extends Controller
     {
         //get all articles
         $page = $request->page ?? 1;
-        $articles = Article::latest()->paginate(6, ['*'], 'page', $page);
+        $articles = Article::latest()->paginate(20, ['*'], 'page', $page);
         //return collection of articles as a resource
         return new ArticleResource(true, 'List Data Articles', $articles->items());
     }
