@@ -25,8 +25,7 @@ class Article extends Model
     protected function image(): Attribute
     {
         return Attribute::make(
-            // get: fn ($image) => asset('/public/articles/' . $image),
-            get: fn ($image) => $image,
+            get: fn ($image) => asset('/public/articles/' . $image),
         );
     }
 }
