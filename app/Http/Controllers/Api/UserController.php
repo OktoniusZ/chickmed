@@ -10,7 +10,7 @@ class UserController extends Controller
 {
     public function updateUser(Request $request) {
         $validated = $request->validate([
-            'name' => 'required',
+            'name' => 'required|min:3',
             'email' => 'required',
         ]);
 
@@ -45,8 +45,8 @@ class UserController extends Controller
 
     public function changePassword(Request $request) {
         $request->validate([
-            'password' => 'required',
-            'confirm_password' => 'required|same:password'
+            'password' => 'required|min:8',
+            'confirm_password' => 'required|min:8|same:password'
         ]);
 
         User::where('id', $request->user()->id)->update([
