@@ -19,7 +19,7 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
+    return Inertia::render('Home', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
@@ -33,10 +33,10 @@ Route::get('/', function () {
 
 // CRUD Route
 Route::get('/dashboard', [ArticleController::class, "index"])->middleware(['auth', 'verified'])->name('dashboard');
-Route::post('/dashboard', [ArticleController::class, "store"])->middleware(['auth', 'verified'])->name('add.dashboard');    
+Route::post('/dashboard', [ArticleController::class, "store"])->middleware(['auth', 'verified'])->name('add.dashboard');
 Route::get('/delete/{id}', [ArticleController::class, "delete"])->middleware(['auth', 'verified'])->name('delete.dashboard');
 Route::get('/article/edit', [ArticleController::class, "edit"])->middleware(['auth', 'verified'])->name('edit.dashboard');
-Route::post('/article/update/{id}', [ArticleController::class, "update"])->middleware(['auth', 'verified'])->name('update.dashboard');    
+Route::post('/article/update/{id}', [ArticleController::class, "update"])->middleware(['auth', 'verified'])->name('update.dashboard');
 
 // Auth
 Route::middleware('auth')->group(function () {
@@ -45,4 +45,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
