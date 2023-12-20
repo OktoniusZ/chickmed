@@ -13,13 +13,13 @@ export default function Home() {
             <Navbar></Navbar>
 
             {/* Start Landing Page */}
-            <div className="flex mx-48 mb-48 justify-between">
-                <div className="">
+            <div className="max-w-screen-2xl flex flex-col my-24 mt-6 lg:my-24 lg:mb-48 p-6 text-center lg:text-left lg:flex-row justify-between items-center mx-auto">
+                <div className="flex flex-col justify-center items-center lg:items-start  mb-8 lg:mb-0">
                     <h1 className="font-bold text-6xl mb-8">
                         <span className="text-orange-600">ChickMed</span> -
                         Poultry <br /> Health Monitor
                     </h1>
-                    <p className="mb-8 w-1/2">
+                    <p className="mb-8 max-w-sm">
                         Welcome to ChickMed, the revolutionary app for poultry
                         health monitoring. Let's make your chickens healthier
                         and happier
@@ -39,17 +39,18 @@ export default function Home() {
             {/* End Landing Page */}
 
             {/* Start Solusi Page */}
-            <div className="flex justify-between mb-48">
-                <div className="mx-48 w-1/2">
-                    <h1 className="font-bold text-6xl mb-8">
+            <div className="flex justify-center flex-col lg:flex-row lg:justify-between items-center p-6 text-center lg:text-left my-48 max-w-screen-2xl mx-auto">
+                <div className="">
+                    <h1 className="font-bold text-4xl md:text-6xl mb-8 max-w-xl">
                         Solusi Pintar Untuk{" "}
-                        <span className="text-orange-600">Kesehatan</span> Ayam <br /> Anda
+                        <span className="text-orange-600">Kesehatan</span> Ayam{" "}
+                        <br /> Anda
                     </h1>
-                    <p className="mb-8 w-3/4">
+                    <p className="mb-6 lg:mb-8 max-w-md mx-auto lg:mx-0">
                         Dengan ChickMed, Anda memiliki alat yang andal untuk
                         merawat ayam peliharaan dengan lebih baik.
                     </p>
-                    <p className="mb-8 w-3/4">
+                    <p className="mb-6 lg:mb-8 max-w-md mx-auto lg:mx-0">
                         Kami memadukan kecerdasan buatan dengan gambar kotoran
                         ayam untuk mendeteksi penyakit dengan cepat dan akurat.
                         Lindungi kawanan ayam Anda dengan aplikasi canggih ini!
@@ -66,19 +67,18 @@ export default function Home() {
             {/* End Solusi Page */}
 
             {/* Start Artikel Page  */}
-            <div className="mx-48">
+            <div className="max-w-screen-2xl mx-auto p-6">
                 <div className="mb-8 text-center">
                     <h1 className="font-bold text-6xl mb-8 text-orange-600">
                         Artikel
                     </h1>
-                    <p className="">
+                    <p className="max-w-2xl text-center mx-auto">
                         ChickMed menyediakan beberapa artikel seputar ternak
                         ayam yang bisa bebas dibaca oleh semua pengguna.
                     </p>
                 </div>
-                <div className="flex justify-between items-center">
-                    {/* Artikel */}
-                    <div className="">
+                <div className="flex justify-center items-center flex-col md:flex-row flex-wrap">
+                    <div className="shadow-sm px-6 py-8 cursor-pointer">
                         <img
                             src="https://images.unsplash.com/photo-1546272989-40c92939c6c2?q=80&w=1882&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                             className="object-cover h-72"
@@ -105,8 +105,7 @@ export default function Home() {
                             </p>
                         </div>
                     </div>
-                    {/* Artikel */}
-                    <div className="">
+                    <div className="shadow-sm px-6 py-8 cursor-pointer">
                         <img
                             src="https://images.unsplash.com/photo-1546272989-40c92939c6c2?q=80&w=1882&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                             className="object-cover h-72"
@@ -133,8 +132,7 @@ export default function Home() {
                             </p>
                         </div>
                     </div>
-                    {/* Artikel */}
-                    <div className="">
+                    <div className="shadow-sm px-6 py-8 cursor-pointer">
                         <img
                             src="https://images.unsplash.com/photo-1546272989-40c92939c6c2?q=80&w=1882&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                             className="object-cover h-72"
@@ -169,14 +167,14 @@ export default function Home() {
             {/* End Artikel Page  */}
 
             {/* Start Banner Page */}
-            <div class="bg-orange-500 w-full h-80 my-48">
-                <div className="pt-20 mx-48">
+            <div class="bg-orange-500 w-full my-48 h-[350px]">
+                <div className="max-w-screen-2xl mx-auto p-6 text-center lg:text-left flex flex-col justify-center items-center lg:justify-start lg:items-start pt-24">
                     <h1 className="text-white font-bold text-5xl mb-8">
                         Get Closer With Us
                     </h1>
                     <img
                         src={playStoreIcon}
-                        className="h-24"
+                        className="h-16 lg:h-24"
                         alt="Google Play Store"
                     />
                 </div>
