@@ -11,7 +11,7 @@ export default function Home() {
         <>
             {/* Navbar component */}
             <Navbar></Navbar>
-            
+
             {/* Start Landing Page */}
             <div className="flex mx-48 mb-48 justify-between">
                 <div className="">
@@ -40,16 +40,16 @@ export default function Home() {
 
             {/* Start Solusi Page */}
             <div className="flex justify-between mb-48">
-                <div className="mx-48">
+                <div className="mx-48 w-1/2">
                     <h1 className="font-bold text-6xl mb-8">
                         Solusi Pintar Untuk{" "}
-                        <span className="text-orange-600">Kesehatan</span> Ayam
+                        <span className="text-orange-600">Kesehatan</span> Ayam <br /> Anda
                     </h1>
-                    <p className="w-1/2 mb-8">
+                    <p className="mb-8 w-3/4">
                         Dengan ChickMed, Anda memiliki alat yang andal untuk
                         merawat ayam peliharaan dengan lebih baik.
                     </p>
-                    <p className="w-1/2 mb-8">
+                    <p className="mb-8 w-3/4">
                         Kami memadukan kecerdasan buatan dengan gambar kotoran
                         ayam untuk mendeteksi penyakit dengan cepat dan akurat.
                         Lindungi kawanan ayam Anda dengan aplikasi canggih ini!
