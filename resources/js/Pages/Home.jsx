@@ -1,10 +1,7 @@
-import { useEffect, useState } from "react";
-import { Link, Head } from "@inertiajs/react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBook, faCoffee } from "@fortawesome/free-solid-svg-icons";
 import playStoreIcon from "../../images/pstore.png";
 import Footer from "@/Components/Footer";
 import Navbar from "@/Components/Navbar";
+import Article from "@/Components/Article";
 
 export default function Home() {
     return (
