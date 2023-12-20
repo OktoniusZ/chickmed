@@ -31,7 +31,7 @@ export default function Navbar() {
             {/* Starts Navigation Bar */}
             <Head title="Home" />
 
-            <div className="navbar bg-base-100 max-w-screen-2xl mx-auto flex justify-between p-6 lg:py-8 mb-24">
+            <div className="navbar bg-base-100 max-w-screen-2xl mx-auto flex justify-between p-6 lg:py-8 mb-12">
                 <div className="flex items-center">
                     <img
                         src="img/Logo.svg"

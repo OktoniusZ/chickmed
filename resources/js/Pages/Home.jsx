@@ -82,12 +82,12 @@ export default function Home() {
                             alt=""
                         />
                         <div className="flex my-1">
-                            <p>
+                            {/* <p>
                                 <FontAwesomeIcon
                                     icon={faBook}
                                     className="text-orange-600 mr-3"
                                 />
-                            </p>
+                            </p> */}
                             <p className="text-xs text-gray-600 leading-6">
                                 Diupload 3 minggu yang lalu..
                             </p>
@@ -109,12 +109,12 @@ export default function Home() {
                             alt=""
                         />
                         <div className="flex my-1">
-                            <p>
+                            {/* <p>
                                 <FontAwesomeIcon
                                     icon={faBook}
                                     className="text-orange-600 mr-3"
                                 />
-                            </p>
+                            </p> */}
                             <p className="text-xs text-gray-600 leading-6">
                                 Diupload 3 minggu yang lalu..
                             </p>
@@ -136,12 +136,12 @@ export default function Home() {
                             alt=""
                         />
                         <div className="flex my-1">
-                            <p>
+                            {/* <p>
                                 <FontAwesomeIcon
                                     icon={faBook}
                                     className="text-orange-600 mr-3"
                                 />
-                            </p>
+                            </p> */}
                             <p className="text-xs text-gray-600 leading-6">
                                 Diupload 3 minggu yang lalu..
                             </p>
