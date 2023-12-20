@@ -23,6 +23,6 @@ module.exports = withMT({
 
     plugins: [forms, require("daisyui")],
     daisyui: {
-        theme: ["light"],
+        themes: ["light"],
     }
 })

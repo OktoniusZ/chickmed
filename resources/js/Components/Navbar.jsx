@@ -1,6 +1,25 @@
+import { useEffect, useState } from "react";
 import { Link, Head } from "@inertiajs/react";
 
-export default function Welcome({ auth, laravelVersion, phpVersion }) {
+export default function Navbar() {
+    const [hasScrolled, setHasScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollY = window.scrollY;
+            if (scrollY > 0) {
+                setHasScrolled(true);
+            } else {
+                setHasScrolled(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
     return (
         <>
             {/* Starts Navigation Bar */}
