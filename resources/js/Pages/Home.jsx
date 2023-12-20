@@ -12,9 +12,10 @@ export default function Home() {
             {/* Start Landing Page */}
             <div className="max-w-screen-2xl flex flex-col my-24 mt-6 lg:my-24 lg:mb-48 p-6 text-center lg:text-left lg:flex-row justify-between items-center mx-auto">
                 <div className="flex flex-col justify-center items-center lg:items-start  mb-8 lg:mb-0">
-                    <h1 className="font-bold text-6xl mb-8">
+                    <h1 className="font-bold text-5xl md:text-6xl mb-8">
                         <span className="text-orange-600">ChickMed</span> -
-                        Poultry <br /> Health Monitor
+                        Poultry <br className="hidden md:block" /> Health
+                        Monitor
                     </h1>
                     <p className="mb-8 max-w-sm">
                         Welcome to ChickMed, the revolutionary app for poultry
@@ -164,8 +165,9 @@ export default function Home() {
             {/* End Artikel Page  */}
 
             {/* Start Banner Page */}
-            <div class="bg-orange-500 w-full my-48 h-[350px]">
-                <div className="max-w-screen-2xl mx-auto p-6 text-center lg:text-left flex flex-col justify-center items-center lg:justify-start lg:items-start pt-24">
+            <div class="bg-orange-500 w-full mt-48 h-[350px] bg-hero-about bg-center relative">
+                <div className="absolute top-0 bottom-0 left-0 right-0 bg-black opacity-50"></div>
+                <div className="relative z-10 max-w-screen-2xl mx-auto p-6 text-center lg:text-left flex flex-col justify-center items-center lg:justify-start lg:items-start pt-24">
                     <h1 className="text-white font-bold text-5xl mb-8">
                         Get Closer With Us
                     </h1>
