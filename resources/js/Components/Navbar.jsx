@@ -77,22 +77,6 @@ export default function Navbar() {
                     </div>
                 </div>
             </nav >
-
-            <div className="container mx-auto p-6 pt-24 text-center">
-                <div className="grid grid-cols-2 gap-8">
-                    {/* Left Column */}
-                    <div>
-                        <h1 className="text-3xl font-bold mb-4 text-white">
-                            Hello World
-                        </h1>
-                        {/* Add other content for the left column */}
-                    </div>
-
-                    {/* Right Column */}
-                    <div>{/* Add content for the right column */}</div>
-                </div>
-            </div>
-            {/* End Navigation Bar */}
         </>
     );
 }

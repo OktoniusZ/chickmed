@@ -27,6 +27,15 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/about', function () {
+    return Inertia::render('About', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+});
+
 Route::get('/services', function () {
     return Inertia::render('Service', [
         'canLogin' => Route::has('login'),
@@ -44,6 +53,7 @@ Route::get('/articles', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
+
 
 // Route::get('/dashboard', function () {
 //     return Inertia::render('Dashboard');

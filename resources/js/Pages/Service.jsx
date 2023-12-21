@@ -10,7 +10,7 @@ export default function Service() {
             <Navbar></Navbar>
 
             {/* Start Landing Page */}
-            <div className="flex mx-32 mb-48 justify-between">
+            <div className="flex mx-32 mb-48 pt-48 justify-between">
                 <div className="">
                     <h1 className="font-bold text-6xl mb-8">
                         <span className="text-orange-600">Terobosan </span>
