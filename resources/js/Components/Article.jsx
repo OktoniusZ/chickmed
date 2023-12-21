@@ -4,7 +4,7 @@ import { faBook } from "@fortawesome/free-solid-svg-icons";
 export default function Article() {
     return (
         <>
-            <div className="">
+            <div className="shadow-md p-3">
                 <img
                     src="https://images.unsplash.com/photo-1546272989-40c92939c6c2?q=80&w=1882&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     className="object-cover h-72"
