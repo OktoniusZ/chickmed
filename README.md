@@ -1,7 +1,7 @@
 <h1 align="center">ChickMed - Chicken Disease Detection</h1>
 <h2>🔭 Project Brief</h2>
 
-#### We created an Android application that provides information about diseases suffered by the chicken. This application will provide recommendations on how to deal with the disease. We will use the image detection method to detect the disease suffered by chickens based on their feces.
+We created an Android application that provides information about diseases suffered by the chicken. This application will provide recommendations on how to deal with the disease. We will use the image detection method to detect the disease suffered by chickens based on their feces.
 
 ## 🤖 Machine Learning Team
 ### Has several responsibility such as:
