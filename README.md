@@ -75,7 +75,7 @@ The REST API to the ChickMed app is described below.
 ### Request
 `GET /article/`
 
-     http://35.219.37.188/articles
+     http://35.219.37.188/api/articles
 
 ### Response
 
@@ -96,6 +96,10 @@ The REST API to the ChickMed app is described below.
 ## Create another article
 `POST /article/`
 
+    http://35.219.37.188/api/articles
+
+### Response
+
     "success": true,
     "message": "Data Article Berhasil Ditambahkan!",
     "data": {
@@ -106,7 +110,42 @@ The REST API to the ChickMed app is described below.
         "updated_at": "2023-12-21T18:56:40.000000Z",
         "created_at": "2023-12-21T18:56:40.000000Z",
         "id": 11
+        }
+
+## Edit an article
+
+### Request - Don't forget to add "_method" to the key and "PUT" to the value.
+
+`POST /article/id`
+
+        http://35.219.37.188/api/articles/id
+
+### Response
+
+    "success": true,
+    "message": "Data Article Berhasil Diubah!",
+    "data": {
+        "id": 11,
+        "image": "http://localhost:8000/public/articles/N42ac3AQIO1NeaMVr28lOUNPOkncW89FulbSd6jc.jpg",
+        "title": "Gejala Sakit Pada Indukan Ayam",
+        "author": "oktoniuszevanya@gmail.com",
+        "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+        "created_at": "2023-12-21T18:56:40.000000Z",
+        "updated_at": "2023-12-21T19:06:41.000000Z"
     }
+
+## Delete an article
+
+### Request - Don't forget to add "_method" to the key and "DELETE" to the value.
+
+`POST /article/id`
+
+    http://35.219.37.188/api/articles/id
+
+### Response
+    "success": true,
+    "message": "Data article Berhasil Dihapus!",
+    "data": null
 
 ## 🏆 Contributor
 1. Syair Dafiq Faizur Rahman (M200BSY0683) - ML - Universitas Diponegoro
