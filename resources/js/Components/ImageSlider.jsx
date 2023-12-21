@@ -4,13 +4,16 @@ import "swiper/css";
 import kamil from "../../images/kamil.jpg";
 import syair from "../../images/syair.jpeg";
 import jihan from "../../images/jihan.png";
+import okto from "../../images/okto.jpg"
+import andre from "../../images/andre.jpg"
+import hengki from "../../images/hengki.jpeg"
 
 export default function ImageSlider() {
     let teams = [
         {
             nama: "Hengki Agung Prayoga",
             job: "Mobile Development",
-            url: syair,
+            url: hengki,
         },
         {
             nama: "Syair Dafiq Faizur Rahman",
@@ -30,12 +33,12 @@ export default function ImageSlider() {
         {
             nama: "Oktonius Zevanya Simanungkalit",
             job: "Cloud Computing",
-            url: syair,
+            url: okto,
         },
         {
             nama: "Andre Sevtian",
             job: "Cloud Computing",
-            url: syair,
+            url: andre,
         },
     ];
     return (
