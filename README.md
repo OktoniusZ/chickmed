@@ -1,7 +1,7 @@
 <h1 align="center">ChickMed - Chicken Disease Detection</h1>
 <h2>🔭 Project Brief</h2>
 
-We created an Android application that provides information about diseases suffered by the chicken. This application will provide recommendations on how to deal with the disease. We will use the image detection method to detect the disease suffered by chickens based on their feces.
+#### We created an Android application that provides information about diseases suffered by the chicken. This application will provide recommendations on how to deal with the disease. We will use the image detection method to detect the disease suffered by chickens based on their feces.
 
 ## 🤖 Machine Learning Team
 ### Has several responsibility such as:
@@ -64,17 +64,49 @@ npm run dev
 🌟 You are all set!
 
 ## ⚡Visit Our Website
-You can visit our web at : http://35.219.37.188:5000
+You can visit our web at : http://35.219.37.188
 
 
-## 📝 API Documentation
-We provided documentation for the api, don't forget to put "/api" before these endpoint;
-1. /register, to register
-2. /login, to login
-3. /articles, to show all of the available articles.
-4. /disease_models, 
-5. /report_disease_models
-6. /report_models
+## 📝 REST API Documentation
+The REST API to the ChickMed app is described below.
+
+## Get list of articles
+
+### Request
+`GET /article/`
+
+     http://35.219.37.188/articles
+
+### Response
+
+    "success": true,
+    "message": "List Data Articles",
+    "data": [
+        {
+            "id": 10,
+            "image": "http://localhost:8000/public/articles/kduzMptaB4uLLnSd7SdXMsy7PeGkeTHO834AJkmL.jpg",
+            "title": "12312",
+            "author": "oktoniuszevanya@gmail.com",
+            "content": "1233",
+            "created_at": "2023-12-15T08:15:32.000000Z",
+            "updated_at": "2023-12-15T08:15:42.000000Z"
+        }
+    ]
+
+## Create another article
+`POST /article/`
+
+    "success": true,
+    "message": "Data Article Berhasil Ditambahkan!",
+    "data": {
+        "image": "http://localhost:8000/public/articles/C1054iQ46OdtR4hSRvtwi4p5O841vdPny5SWfvrq.jpg",
+        "title": "Cara Merawat Ayam Dengan Baik",
+        "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+        "author": "oktoniuszevanya@gmail.com",
+        "updated_at": "2023-12-21T18:56:40.000000Z",
+        "created_at": "2023-12-21T18:56:40.000000Z",
+        "id": 11
+    }
 
 ## 🏆 Contributor
 1. Syair Dafiq Faizur Rahman (M200BSY0683) - ML - Universitas Diponegoro
