@@ -10,9 +10,9 @@ export default defineConfig({
         }),
         react(),
     ],
-    base: "/",
+    base: "/",  
     build: {
-        outDir: "public/build", // Laravel looks for assets here
+        outDir: "dist", // Laravel looks for assets here
         manifest: true, // Generates manifest.json for Laravel
         rollupOptions: {
             input: "resources/js/app.jsx", // Ensures correct entry file
