@@ -6,7 +6,7 @@ export default function Articles() {
     return (
         <>
             {/* Navbar component */}
-            <Navbar></Navbar>
+            <Navbar title="Artikel" />
 
             {/* Start Landing Page */}
             <div className="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10 my-8 md:my-24 p-6 text-center md:text-left">

@@ -10,7 +10,7 @@ export default function Home() {
     return (
         <>
             {/* Navbar component */}
-            <Navbar></Navbar>
+            <Navbar title={"Home"}/>
 
             {/* Start Landing Page */}
             <div className="max-w-screen-2xl flex flex-col my-24 mt-6 lg:my-24 lg:mb-48 p-6 text-center lg:text-left lg:flex-row justify-between items-center mx-auto">

@@ -10,7 +10,7 @@ import ImageSlider from "@/Components/ImageSlider";
 export default function About() {
     return (
         <>
-            <Navbar />
+        <Navbar title="Tentang Kami" />
             {/* Start Landing Page */}
 
             <div className="w-100 py-36 bg-hero-about bg-center relative">

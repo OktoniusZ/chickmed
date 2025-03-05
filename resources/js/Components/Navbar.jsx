@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, Head, usePage } from "@inertiajs/react";
 
-export default function Navbar() {
+export default function Navbar({title}) {
     const [hasScrolled, setHasScrolled] = useState(false);
 
     useEffect(() => {
@@ -29,7 +29,7 @@ export default function Navbar() {
     return (
         <>
             {/* Starts Navigation Bar */}
-            <Head title="Home" />
+            <Head title={title} />
 
             <div className="navbar bg-base-100 max-w-screen-2xl mx-auto flex justify-between p-6 lg:py-8">
                 <div className="flex items-center">

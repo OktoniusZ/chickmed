@@ -12,7 +12,7 @@ export default function Service() {
     return (
         <>
             {/* Navbar component */}
-            <Navbar></Navbar>
+            <Navbar title="Service" />
 
             {/* Start Landing Page */}
             <div className="max-w-screen-2xl flex mx-auto my-24 mt-12 flex-col md:flex-row p-6 text-center md:text-left gap-5">
