@@ -3,8 +3,8 @@ import Footer from "@/Components/Footer";
 import Navbar from "@/Components/Navbar";
 import Article from "@/Components/Article";
 
-import HomeHero from "../../images/hero-home.png";
-import HeroSolution from "../../images/hero-solution.png";
+import HomeHero from "../../images/hero-home.jpg";
+import HeroSolution from "../../images/hero-solution.jpg";
 
 export default function Home() {
     return (
